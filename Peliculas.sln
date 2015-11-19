@@ -4,15 +4,16 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Peliculas", "Peliculas\", "{8194B146-DD0A-479F-B2E3-17A306B81724}"
 	ProjectSection(WebsiteProperties) = preProject
 		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		ProjectReferences = "{E193FB11-E99A-4EB4-A09E-EF753E9C177C}|DatPeliculas.dll;{422EE838-6F1D-49B8-BD4C-0AF60090A495}|BusPeliculas.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/Peliculas"
-		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\Luis\Peliculas\Peliculas\"
+		Debug.AspNetCompiler.PhysicalPath = "Peliculas\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Peliculas\"
 		Debug.AspNetCompiler.Updateable = "true"
 		Debug.AspNetCompiler.ForceOverwrite = "true"
 		Debug.AspNetCompiler.FixedNames = "false"
 		Debug.AspNetCompiler.Debug = "True"
 		Release.AspNetCompiler.VirtualPath = "/Peliculas"
-		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\Luis\Peliculas\Peliculas\"
+		Release.AspNetCompiler.PhysicalPath = "Peliculas\"
 		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\Peliculas\"
 		Release.AspNetCompiler.Updateable = "true"
 		Release.AspNetCompiler.ForceOverwrite = "true"
@@ -22,15 +23,48 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Peliculas", "Peliculas\", "
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.-UI", "1.-UI", "{CB15DAF4-97EC-4F41-8FD1-96DFE9B9AF8B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.-Bussines", "2.-Bussines", "{2A25A1D9-F6B2-450D-8C23-807B64DE4D80}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.-Data", "3.-Data", "{65FAB76E-9085-47A0-BB8E-4607CC470795}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusPeliculas", "BusPeliculas\BusPeliculas.csproj", "{422EE838-6F1D-49B8-BD4C-0AF60090A495}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatPeliculas", "DatPeliculas\DatPeliculas.csproj", "{E193FB11-E99A-4EB4-A09E-EF753E9C177C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entity", "Entity\Entity.csproj", "{C60BF265-2878-4614-8537-0EDDAD7D4B71}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{8194B146-DD0A-479F-B2E3-17A306B81724}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8194B146-DD0A-479F-B2E3-17A306B81724}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8194B146-DD0A-479F-B2E3-17A306B81724}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{8194B146-DD0A-479F-B2E3-17A306B81724}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{422EE838-6F1D-49B8-BD4C-0AF60090A495}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{422EE838-6F1D-49B8-BD4C-0AF60090A495}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{422EE838-6F1D-49B8-BD4C-0AF60090A495}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{422EE838-6F1D-49B8-BD4C-0AF60090A495}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E193FB11-E99A-4EB4-A09E-EF753E9C177C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E193FB11-E99A-4EB4-A09E-EF753E9C177C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E193FB11-E99A-4EB4-A09E-EF753E9C177C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E193FB11-E99A-4EB4-A09E-EF753E9C177C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C60BF265-2878-4614-8537-0EDDAD7D4B71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C60BF265-2878-4614-8537-0EDDAD7D4B71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C60BF265-2878-4614-8537-0EDDAD7D4B71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C60BF265-2878-4614-8537-0EDDAD7D4B71}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8194B146-DD0A-479F-B2E3-17A306B81724} = {CB15DAF4-97EC-4F41-8FD1-96DFE9B9AF8B}
+		{422EE838-6F1D-49B8-BD4C-0AF60090A495} = {2A25A1D9-F6B2-450D-8C23-807B64DE4D80}
+		{C60BF265-2878-4614-8537-0EDDAD7D4B71} = {2A25A1D9-F6B2-450D-8C23-807B64DE4D80}
+		{E193FB11-E99A-4EB4-A09E-EF753E9C177C} = {65FAB76E-9085-47A0-BB8E-4607CC470795}
 	EndGlobalSection
 EndGlobal
