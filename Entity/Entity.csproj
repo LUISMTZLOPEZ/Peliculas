@@ -40,6 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntCatalogos.cs" />
+    <Compile Include="EntClasi.cs" />
+    <Compile Include="EntGenero.cs" />
+    <Compile Include="EntPelicula.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
