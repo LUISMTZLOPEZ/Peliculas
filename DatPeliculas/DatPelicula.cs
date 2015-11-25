@@ -12,7 +12,7 @@ namespace Peliculas.Data
         public SqlConnection con;
         public DatPelicula()
         {
-            con = new SqlConnection("Data Source =TORO-PC\\MSSQLSERVER2012; initial catalog=Cinepolis; user Id=sa; Password=12345;");
+            con = new SqlConnection("Data Source =SYSTEMP3\\MSSQLSERVER2012; initial catalog=Cinepolis; user Id=sa; Password=12345;");
         }
         public DataTable obtener(int Id)
         {
@@ -37,6 +37,10 @@ namespace Peliculas.Data
         {
             SqlCommand com = new SqlCommand("spObtenerEstrenos", con);
             com.CommandType = CommandType.StoredProcedure;
+<<<<<<< HEAD
+=======
+          //com.Parameters.Add(new SqlParameter() { SqlDbType = SqlDbType.Int, ParameterName = "@Id", Value = Id });
+>>>>>>> origin/master
             SqlDataAdapter da = new SqlDataAdapter(com);
             DataTable dt = new DataTable();
             da.Fill(dt);
