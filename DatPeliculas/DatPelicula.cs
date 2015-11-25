@@ -26,7 +26,7 @@ namespace Peliculas.Data
         }
         public DataTable obtener()
         {
-            SqlCommand com = new SqlCommand("spObtenerPeliculaCompleta", con);
+            SqlCommand com = new SqlCommand("spObtenerPeliculaComp", con);
             com.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter da = new SqlDataAdapter(com);
             DataTable dt = new DataTable();
@@ -45,7 +45,7 @@ namespace Peliculas.Data
         }
         public DataTable Obtener(string Nombre, int Clasificacionid, int GeneroId, DateTime FechaLanz)
         {
-            SqlCommand com = new SqlCommand("spObtenerPeliculaComp", con);
+            SqlCommand com = new SqlCommand("spObtenerPeliculaCompleta", con);
             com.CommandType = CommandType.StoredProcedure;
             com.Parameters.Add(new SqlParameter() { SqlDbType = SqlDbType.NVarChar, ParameterName = "@Nombre", Value = Nombre });
             com.Parameters.Add(new SqlParameter() { SqlDbType = SqlDbType.Int, ParameterName = "@ClasificacionId", Value = Clasificacionid });
