@@ -37,10 +37,6 @@ namespace Peliculas.Data
         {
             SqlCommand com = new SqlCommand("spObtenerEstrenos", con);
             com.CommandType = CommandType.StoredProcedure;
-<<<<<<< HEAD
-=======
-          //com.Parameters.Add(new SqlParameter() { SqlDbType = SqlDbType.Int, ParameterName = "@Id", Value = Id });
->>>>>>> origin/master
             SqlDataAdapter da = new SqlDataAdapter(com);
             DataTable dt = new DataTable();
             da.Fill(dt);

@@ -26,7 +26,7 @@ namespace Peliculas.Bussines
         }
         public List<EntClasi> obtenerClasificacion()
         {
-            DataTable dt = new DatCatalogos().obtenerClasificacionCompleto();
+            DataTable dt = new DatCatalogos().obtenerClasificacion();
             List<EntClasi> lst = new List<EntClasi>();
             foreach (DataRow dr in dt.Rows)
             {
