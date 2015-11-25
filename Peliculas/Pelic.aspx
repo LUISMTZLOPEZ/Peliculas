@@ -1,25 +1,35 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Peliculas.aspx.cs" Inherits="Peliculas" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Pelic.aspx.cs" Inherits="Pelic" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title></title>
     <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="css/bootstrap-datetimepicker.css" rel="stylesheet" type="text/css" />
+    <style>
+        body
+        {
+            background: url(img/fondo.jpg);
+           
+            width:auto;
+            height:auto;
+        }
+    </style>
 </head>
-<body style="background-image: url('img/descarga%20(1).jpg')">
+<body>
     <form id="form1" runat="server">
     <div class="container">
-        <div class="row"style="margin-top:3px">
-            <div class="col-xs-8">
+        <div class="row" style="margin-top: 3px">
+            <div class="col-xs-7">
             </div>
             <div class="col-xs-2 " style="width: 100px; height: 80px;">
-                <asp:LinkButton Style="font-size: 15px; color: #F5F5F5" Text="Registrate" ID="lnkRegistrarse"
-                    runat="server" />
+                <a class="modal-dialog modal-sm" style="font-size: 15px; color: #F5F5F5">Registrate</a>
             </div>
-            <div class="col-xs-2 " style="width: 100px; height: 80px;">
-                <asp:LinkButton Style="font-size: 15px; color: #F5F5F5" Text="Login" ID="lnkLogin"
-                    runat="server" />
+            <div class="col-xs-3 " style="width: 120px; height: 80px; top: 0px; left: 30px;">
+                <a class="modal-dialog modal-sm" style="font-size: 15px; color: #F5F5F5">Inicar sesion</a>
             </div>
         </div>
         <div class="row">
@@ -32,25 +42,11 @@
                     <div id="myCarousel" class="carousel slide" data-ride="carousel">
                         <!-- Indicators -->
                         <ol class="carousel-indicators">
-                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                            <li data-target="#myCarousel" data-slide-to="1"></li>
-                            <li data-target="#myCarousel" data-slide-to="2"></li>
-                            <li data-target="#myCarousel" data-slide-to="3"></li>
+                            <asp:PlaceHolder runat="server" ID="phSliderUno" />
                         </ol>
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner" role="listbox">
-                            <div class="item active">
-                                <img src="img/Triler.jpg" style="margin: auto" />
-                            </div>
-                            <div class="item">
-                                <img src="img/Tortugas.jpg" style="margin: auto" />
-                            </div>
-                            <div class="item">
-                                <img src="img/Oscuridad.jpg" style="margin: auto" />
-                            </div>
-                            <div class="item">
-                                <img src="img/Av.jpg" style="margin: auto" />
-                            </div>
+                            <asp:PlaceHolder runat="server" ID="phSliderDos" />
                         </div>
                     </div>
                     <!-- Left and right controls -->
@@ -66,25 +62,11 @@
                     <div id="CaruselDos" class="carousel slide" data-ride="carousel">
                         <!-- Indicators -->
                         <ol class="carousel-indicators">
-                            <li data-target="#CaruselDos" data-slide-to="0" class="active"></li>
-                            <li data-target="#CaruselDos" data-slide-to="1"></li>
-                            <li data-target="#CaruselDos" data-slide-to="2"></li>
-                            <li data-target="#CaruselDos" data-slide-to="3"></li>
+                            <asp:PlaceHolder runat="server" ID="phSliderTres" />
                         </ol>
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner" role="listbox">
-                            <div class="item active">
-                                <img src="img/Triler.jpg" style="margin: auto" />
-                            </div>
-                            <div class="item">
-                                <img src="img/Tortugas.jpg" style="margin: auto" />
-                            </div>
-                            <div class="item">
-                                <img src="img/Oscuridad.jpg" style="margin: auto" />
-                            </div>
-                            <div class="item">
-                                <img src="img/Av.jpg" style="margin: auto" />
-                            </div>
+                            <asp:PlaceHolder runat="server" ID="phSliderCuatro" />
                         </div>
                     </div>
                     <!-- Left and right controls -->
@@ -98,7 +80,6 @@
             <div class="row" style="width: 200px; height: 80px;">
                 <div class="col-xs-12">
                 </div>
-                
             </div>
             <div class="row">
                 <div class="panel panel-default">
@@ -109,12 +90,14 @@
                         Recuarda que puedes encntrar una mayo varidad de peliculas "Disfruta"</div>
                     <div class="panel-body" style="background-color: #333333;">
                         <div class="col-md-2">
-                            <asp:DropDownList CssClass="form-control" runat="server" ID="ddlClas" AppendDataBoundItems="true" AutoPostBack="true">
+                            <asp:DropDownList CssClass="form-control" runat="server" ID="ddlClas" AppendDataBoundItems="true"
+                                AutoPostBack="true">
                                 <asp:ListItem Text="[Genero]" Value="-1" />
                             </asp:DropDownList>
                         </div>
                         <div class="col-md-2">
-                            <asp:DropDownList CssClass="form-control" runat="server" ID="DropDownList1" AppendDataBoundItems="true" AutoPostBack="true">
+                            <asp:DropDownList CssClass="form-control" runat="server" ID="DropDownList1" AppendDataBoundItems="true"
+                                AutoPostBack="true">
                                 <asp:ListItem Text="[Clasificacion]" Value="-1" />
                             </asp:DropDownList>
                         </div>
@@ -131,14 +114,42 @@
                             </div>
                         </div>
                         <div class="col-md-2">
-                            <asp:ImageButton ImageUrl="img/087837-ultra-glossy-silver-button-icon-business-magnifying-glass-ps_opt.png" runat="server" />
-                        
+                            <asp:ImageButton ImageUrl="img/087837-ultra-glossy-silver-button-icon-business-magnifying-glass-ps_opt.png"
+                                runat="server" />
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row" style="margin-top: 20px">
-                <asp:PlaceHolder runat="server" ID="phPelis" />     
+                <asp:PlaceHolder runat="server" ID="phPelis" />
+            </div>
+        </div>
+    </div>
+    <asp:GridView runat="server" ID="GvPelis" />
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        &times;</button>
+                    <h4 class="modal-title">
+                        Login</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-addon">Email</span>
+                        <asp:TextBox runat="server" ID="txtEmail" class="form-control" placeholder="Email" />
+                    </div>
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-addon">Contraseña</span>
+                        <asp:TextBox runat="server" ID="txtContraseña" class="form-control" placeholder="Contraseña" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <asp:Button Text="Entrar" runat="server" class="btn btn-default" data-dismiss="modal" />
+                </div>
             </div>
         </div>
     </div>
