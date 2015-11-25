@@ -40,7 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EntCatalogos.cs" />
+    <Compile Include="EntUsuario.cs" />
     <Compile Include="EntClasi.cs" />
     <Compile Include="EntGenero.cs" />
     <Compile Include="EntPelicula.cs" />

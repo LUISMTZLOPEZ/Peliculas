@@ -10,6 +10,7 @@ namespace Peliculas.Bussines.Entity
         public int Id { get; set; }
         public string Nombre { get; set; }
         public DateTime AnioLanzamiento { get; set; }
+        public DateTime FechaAlta { get; set; }
         public string Sinopsis { get; set; }
         public bool Estatus { get; set; }
         public string Trailer { get; set; }

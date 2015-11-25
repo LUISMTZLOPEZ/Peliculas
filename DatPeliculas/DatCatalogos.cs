@@ -23,14 +23,26 @@ namespace Peliculas.Data
             da.Fill(dt);
             return dt;
         }
-        public DataTable obtenerClasificacionCompleto()
+        public DataTable obtenerClasificacion()
         {
-            SqlCommand com = new SqlCommand("spObtenerClasificacionCompleto", con);
+            SqlCommand com = new SqlCommand("spObtenerClasificacion", con);
             com.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter da = new SqlDataAdapter(com);
             DataTable dt = new DataTable();
             da.Fill(dt);
             return dt;
+        }
+        public DataTable obtenerUsuario(string Correo, string Password)
+        {
+            SqlCommand com = new SqlCommand("spObtenerUsuario", con);
+        com.CommandType = CommandType.StoredProcedure;
+        com.Parameters.Add(new SqlParameter() { SqlDbType = SqlDbType.NVarChar, ParameterName = "@Correo", Value= Correo });
+        com.Parameters.Add(new SqlParameter() { SqlDbType = SqlDbType.NVarChar, ParameterName = "@Password", Value = Password });
+        SqlDataAdapter da = new SqlDataAdapter(com);
+        DataTable dt = new DataTable();
+        da.Fill(dt);
+        return dt;
+ 
         }
     }
 }
