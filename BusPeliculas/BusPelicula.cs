@@ -59,7 +59,7 @@ namespace Peliculas.Bussines
             return lst;
 
         }
-         public List<EntUsuario> obtenerUsuario(string Correo,string Password)
+         public EntUsuario obtenerUsuario(string Correo,string Password)
         {
             DataTable dt = new DatCatalogos().obtenerUsuario(Correo, Password);
              List<EntUsuario> lst = new List<EntUsuario>();
@@ -71,7 +71,7 @@ namespace Peliculas.Bussines
                 ent.Correo = dr["USUA_CORR"].ToString();
                  ent.Password= dr["USUA_PASS"].ToString();
 	        }
-             return lst;
+             return lst.Add[0];
         }
          public List<EntPelicula> ObtenerUltimas()
          {
