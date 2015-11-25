@@ -12,10 +12,10 @@
     <style>
         body
         {
-            background: url(img/fondo.jpg);
-           
-            width:auto;
-            height:auto;
+            background-image: url(img/mas.jpg);
+            
+            background-size:900px 300px;
+            background-repeat: no-repeat;
         }
     </style>
 </head>
