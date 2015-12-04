@@ -16,7 +16,7 @@ namespace Peliculas.Data
         }
         public DataTable obtener(int Id)
         {
-            SqlCommand com = new SqlCommand("spObtenerPelicula", con);
+            SqlCommand com = new SqlCommand("spObtenerUno", con);
             com.CommandType = CommandType.StoredProcedure;
             com.Parameters.Add(new SqlParameter() { SqlDbType = SqlDbType.Int, ParameterName = "@Id", Value = Id });
             SqlDataAdapter da = new SqlDataAdapter(com);
@@ -26,8 +26,9 @@ namespace Peliculas.Data
         }
         public DataTable obtener()
         {
-            SqlCommand com = new SqlCommand("spObtenerPeliculaComp", con);
+            SqlCommand com = new SqlCommand("spObtenerPelicula", con);
             com.CommandType = CommandType.StoredProcedure;
+
             SqlDataAdapter da = new SqlDataAdapter(com);
             DataTable dt = new DataTable();
             da.Fill(dt);
@@ -78,7 +79,7 @@ namespace Peliculas.Data
         }
         public DataTable ObtenerUltimas()
         {
-            SqlCommand com = new SqlCommand("spObtenerUltimas", con);
+            SqlCommand com = new SqlCommand("spUltimas", con);
             com.CommandType = CommandType.StoredProcedure;
             SqlDataAdapter da = new SqlDataAdapter(com);
             DataTable dt = new DataTable();

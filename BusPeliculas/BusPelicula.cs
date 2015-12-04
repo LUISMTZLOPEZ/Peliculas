@@ -38,6 +38,7 @@ namespace Peliculas.Bussines
             lst = obj(dt);
             return lst;
         }
+       
         private List<EntPelicula> obj(DataTable dt)
         {
             List<EntPelicula> lst = new List<EntPelicula>();
@@ -52,7 +53,9 @@ namespace Peliculas.Bussines
                 ent.Trailer = dr["PELI_TRAI"].ToString();
                 ent.FotoPortada = dr["PELI_FOTO_PORT"].ToString();
                 ent.FotoMini = dr["PELI_FOTO_MINI"].ToString();
+                ent.Genero.Id=Convert.ToInt32(dr["GENE_ID"]);
                 ent.Genero.Nombre = dr["GENE_NOMB"].ToString();
+                ent.Clasificacion.Id=Convert.ToInt32(dr["CLAS_ID"]);
                 ent.Clasificacion.Nombre = dr["CLAS_NOMB"].ToString();
                 lst.Add(ent);
             }
@@ -71,7 +74,7 @@ namespace Peliculas.Bussines
                 ent.Correo = dr["USUA_CORR"].ToString();
                  ent.Password= dr["USUA_PASS"].ToString();
 	        }
-             return lst.Add[0];
+             return lst[0];
         }
          public List<EntPelicula> ObtenerUltimas()
          {

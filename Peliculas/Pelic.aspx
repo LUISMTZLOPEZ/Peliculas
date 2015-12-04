@@ -12,9 +12,9 @@
     <style>
         body
         {
-            background-image: url(img/mas.jpg);
-            
-            background-size:900px 300px;
+            background-image: url(img/kara.jpg);
+           
+            background-size:1280px 600px;
             background-repeat: no-repeat;
         }
     </style>
@@ -22,14 +22,18 @@
 <body>
     <form id="form1" runat="server">
     <div class="container">
-        <div class="row" style="margin-top: 3px">
+        <div class="row" style="margin: auto ">
             <div class="col-xs-7">
+                <asp:Label style="font-size: 15px;color: #F5F5F5; " Text="'Bien Venid@'" ID="lblBienVenido" runat="server" />
             </div>
             <div class="col-xs-2 " style="width: 100px; height: 80px;">
-                <a class="modal-dialog modal-sm" style="font-size: 15px; color: #F5F5F5">Registrate</a>
+             <a class="modal-dialog modal-sm"  style="font-size: 15px; color: #F5F5F5" data-toggle="modal" data-target="#myModal">Registrate</a>
+         <%--   <a class="btn btn-default btn-lg" data-toggle="modal" data-target="#myModal">Registrate</a>--%>
+                
             </div>
             <div class="col-xs-3 " style="width: 120px; height: 80px; top: 0px; left: 30px;">
-                <a class="modal-dialog modal-sm" style="font-size: 15px; color: #F5F5F5">Inicar sesion</a>
+            <a class="modal-dialog modal-sm"  style="font-size: 15px; color: #F5F5F5" data-toggle="modal" data-target="#myModalUNO">Inicar sesion</a>
+              <%--  <a class="modal-dialog modal-sm" style="font-size: 15px; color: #F5F5F5">Inicar sesion</a>--%>
             </div>
         </div>
         <div class="row">
@@ -120,8 +124,11 @@
                     </div>
                 </div>
             </div>
-            <div class="row" style="margin-top: 20px">
+            <div class="row">
+                <div class="panel-body " style="background-color :Black">
                 <asp:PlaceHolder runat="server" ID="phPelis" />
+                    </div>
+                
             </div>
         </div>
     </div>
@@ -140,15 +147,45 @@
                 <div class="modal-body">
                     <div class="input-group input-group-lg">
                         <span class="input-group-addon">Email</span>
-                        <asp:TextBox runat="server" ID="txtEmail" class="form-control" placeholder="Email" />
+                        <asp:TextBox runat="server" ID="txtEmailDos" class="form-control" placeholder="Email" />
                     </div>
                     <div class="input-group input-group-lg">
                         <span class="input-group-addon">Contraseña</span>
-                        <asp:TextBox runat="server" ID="txtContraseña" class="form-control" placeholder="Contraseña" />
+                        <asp:TextBox runat="server" ID="txtContraDos" class="form-control" placeholder="Contraseña" />
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <asp:Button Text="Entrar" runat="server" class="btn btn-default" data-dismiss="modal" />
+                <asp:Button ID="btnRegistrar" Text="Registrar" runat="server" class="btn btn-default" data-dismiss="modal" />
+                    <asp:Button ID="btnCerrar" Text="Cerrar" runat="server" class="btn btn-default" data-dismiss="modal" />
+                 
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+    <div id="myModalUNO" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">
+                        &times;</button>
+                    <h4 class="modal-title">
+                        Login</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-addon">Email</span>
+                        <asp:TextBox runat="server" ID="txtEmailUno" class="form-control"  />
+                    </div>
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-addon">Contraseña</span>
+                        <asp:TextBox runat="server" ID="txtContraUno" class="form-control" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                       <asp:Button id="btnEntrar"  Text="Entrar" runat="server" 
+                           class="btn btn-default" data-dismiss="modal" onclick="btnEntrar_Click1" />
                 </div>
             </div>
         </div>
