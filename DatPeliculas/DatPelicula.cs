@@ -86,7 +86,7 @@ namespace Peliculas.Data
             da.Fill(dt);
             return dt;
         }
-        public int Actualizar(string nombre, DateTime fechaLanz, int clasificacion, int genero, bool estatus, string sinopsis, string trailer, string fotoPortada, string fotoMini, int id)
+        public int Actualizar(string nombre, DateTime fechaLanz, int clasificacion, int genero, bool estatus, string sinopsis, string trailer, string fotoPortada, string fotoMini, int id, int existencia)
         {
             SqlCommand com = new SqlCommand("spActualizar", con);
             com.CommandType = CommandType.StoredProcedure;
@@ -94,12 +94,14 @@ namespace Peliculas.Data
             com.Parameters.Add(new SqlParameter() { SqlDbType = SqlDbType.NVarChar, ParameterName = "@FechaLanz", Value = fechaLanz });
             com.Parameters.Add(new SqlParameter() { SqlDbType = SqlDbType.Int, ParameterName = "@ClasId", Value = clasificacion });
             com.Parameters.Add(new SqlParameter() { SqlDbType = SqlDbType.Int, ParameterName = "@GeneId", Value = genero });
+            
             com.Parameters.Add(new SqlParameter() { SqlDbType = SqlDbType.Bit, ParameterName = "@Estatus", Value = estatus });
             com.Parameters.Add(new SqlParameter() { SqlDbType = SqlDbType.NVarChar, ParameterName = "@Sinopsis", Value = sinopsis });
             com.Parameters.Add(new SqlParameter() { SqlDbType = SqlDbType.NVarChar, ParameterName = "@Trailer", Value = trailer });
             com.Parameters.Add(new SqlParameter() { SqlDbType = SqlDbType.NVarChar, ParameterName = "@FotoPortada", Value = fotoPortada });
             com.Parameters.Add(new SqlParameter() { SqlDbType = SqlDbType.NVarChar, ParameterName = "@FotoMini", Value = fotoMini });
             com.Parameters.Add(new SqlParameter() { SqlDbType = SqlDbType.Int, ParameterName = "@Id", Value = id });
+            com.Parameters.Add(new SqlParameter() { SqlDbType = SqlDbType.Int, ParameterName = "@Existencia", Value = existencia });
             try
             {
                 con.Open();
@@ -113,7 +115,7 @@ namespace Peliculas.Data
                 throw new ApplicationException(ex.Message);
             }
         }
-        public int Guardar(string nombre, DateTime fechaLanz, int clasificacion, int genero, DateTime fechaAlta, bool estatus, string sinopsis, string trailer, string fotoPortada, string fotoMini)
+        public int Guardar(string nombre, DateTime fechaLanz, int clasificacion, int genero, DateTime fechaAlta, bool estatus, string sinopsis, string trailer, string fotoPortada, string fotoMini, int existencia)
         {
             SqlCommand com = new SqlCommand("spGuardar", con);
             com.CommandType = CommandType.StoredProcedure;
@@ -127,6 +129,7 @@ namespace Peliculas.Data
             com.Parameters.Add(new SqlParameter() { SqlDbType = SqlDbType.NVarChar, ParameterName = "@Trailer", Value = trailer });
             com.Parameters.Add(new SqlParameter() { SqlDbType = SqlDbType.NVarChar, ParameterName = "@FotoPortada", Value = fotoPortada });
             com.Parameters.Add(new SqlParameter() { SqlDbType = SqlDbType.NVarChar, ParameterName = "@FotoMini", Value = fotoMini });
+            com.Parameters.Add(new SqlParameter() { SqlDbType = SqlDbType.Int, ParameterName = "@Existencia", Value = existencia });
             try
             {
                 con.Open();

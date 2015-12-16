@@ -46,8 +46,10 @@ namespace Peliculas.Bussines
             {
                 EntPelicula ent = new EntPelicula();
                 ent.Id = Convert.ToInt32(dr["PELI_ID"]);
+                ent.Existencia = Convert.ToInt32(dr["PELI_EXIST"]);
                 ent.Nombre = dr["PELI_NOMB"].ToString();
                 ent.AnioLanzamiento = Convert.ToDateTime(dr["PELI_ANIO_LANZ"]);
+                ent.FechaAlta = Convert.ToDateTime(dr["PELI_FECH_ALTA"]);
                 ent.Estatus = Convert.ToBoolean(dr["PELI_ESTA"]);
                 ent.Sinopsis = dr["PELI_SINO"].ToString();
                 ent.Trailer = dr["PELI_TRAI"].ToString();
@@ -85,7 +87,7 @@ namespace Peliculas.Bussines
          }
          public void Actualizar(EntPelicula ent)
          {
-             int filas = new DatPelicula().Actualizar(ent.Nombre, ent.AnioLanzamiento, ent.Clasificacion.Id, ent.Genero.Id, ent.Estatus, ent.Sinopsis, ent.Trailer, ent.FotoPortada, ent.FotoPortada, ent.Id);
+             int filas = new DatPelicula().Actualizar(ent.Nombre, ent.AnioLanzamiento, ent.Clasificacion.Id, ent.Genero.Id, ent.Estatus, ent.Sinopsis, ent.Trailer, ent.FotoPortada, ent.FotoPortada, ent.Id, ent.Existencia);
              if (filas != 1)
              {
                  throw new ApplicationException("Error al Actualizar Pelicula");
@@ -93,7 +95,7 @@ namespace Peliculas.Bussines
          }
          public void Guardar(EntPelicula ent)
          {
-             int filas = new DatPelicula().Guardar(ent.Nombre, ent.AnioLanzamiento, ent.Clasificacion.Id, ent.Genero.Id, ent.FechaAlta, ent.Estatus, ent.Sinopsis, ent.Trailer, ent.FotoPortada, ent.FotoMini);
+             int filas = new DatPelicula().Guardar(ent.Nombre, ent.AnioLanzamiento, ent.Clasificacion.Id, ent.Genero.Id, ent.FechaAlta, ent.Estatus, ent.Sinopsis, ent.Trailer, ent.FotoPortada, ent.FotoMini, ent.Existencia);
              if (filas != 1)
              {
                  throw new ApplicationException("Error al Insertar Pelicula ");

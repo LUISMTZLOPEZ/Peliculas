@@ -12,35 +12,18 @@ public partial class Pelic : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        //try
-        //{
-            //if (Session["123"] == null)
-            //{
-            //    Response.Redirect("pelic.aspx");
-            //    //else
-            //    ////string id= Response.QueryString["id"].tostring();
-
-
-            //}
+        
+            
             if (!IsPostBack)
             {
                 CargarCarusel();
                 CargarCaruselDos();
                 CargarPelis();
             }
-        //}
-        //catch (Exception ex)
-        //{
-        //    MostrarMensaje(ex.Message);
-        //}
+       
 
     }
-    //private void LlenarGvPelis()
-    //{
-    //    GvPelis.DataSource = new BusPelicula().obtener();
-    //    GvPelis.DataBind();
-    //}
-
+   
 
 
     private void CargarPelis()
@@ -182,7 +165,7 @@ public partial class Pelic : System.Web.UI.Page
             {
                 Session["123"] = log;
                 lblBienVenido.Text = "Bien Venido" + ent.Nombre;
-                ////Response.Redirect("");
+                Response.Redirect("Registra.aspx");
             }
             else
                 throw new ApplicationException("Usuario y/o contraseña incorrectos,  :(");

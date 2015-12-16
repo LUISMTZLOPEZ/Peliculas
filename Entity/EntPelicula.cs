@@ -16,6 +16,7 @@ namespace Peliculas.Bussines.Entity
         public string Trailer { get; set; }
         public string FotoPortada { get; set; }
         public string FotoMini { get; set; }
+        public int Existencia { get; set; }
         private EntGenero genero;
 
         public EntGenero Genero

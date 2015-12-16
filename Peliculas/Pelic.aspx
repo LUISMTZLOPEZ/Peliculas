@@ -86,13 +86,15 @@
                 </div>
             </div>
             <div class="row">
+          
                 <div class="panel panel-default">
                     <!-- Default panel contents -->
                     <%--<img style="position:absolute; margin-left:10px" src="/img/barr1.png" border="0">--%>
+                    <%--<img src="/img/bootstrap_3/componentes-barra-navegacion-invertida.png" alt="Barra de navegación invertida en Bootstrap 3"/>--%>
                     <div class="panel-heading" style="background-color: #0014FF; text-align: center;
                         font: oblique bold 120% cursive;">
-                        Recuarda que puedes encntrar una mayo varidad de peliculas "Disfruta"</div>
-                    <div class="panel-body" style="background-color: #333333;">
+                        Recuarda que puedes encontrar una mayor varidad de peliculas "Disfruta"</div>
+                    <div class="panel-body" style="background-color: #333333; padding-left:auto; padding:10px">
                         <div class="col-md-2">
                             <asp:DropDownList CssClass="form-control" runat="server" ID="ddlClas" AppendDataBoundItems="true"
                                 AutoPostBack="true">
@@ -100,7 +102,7 @@
                             </asp:DropDownList>
                         </div>
                         <div class="col-md-2">
-                            <asp:DropDownList CssClass="form-control" runat="server" ID="DropDownList1" AppendDataBoundItems="true"
+                            <asp:DropDownList CssClass="form-control" runat="server"  ID="DropDownList1" AppendDataBoundItems="true"
                                 AutoPostBack="true">
                                 <asp:ListItem Text="[Clasificacion]" Value="-1" />
                             </asp:DropDownList>
